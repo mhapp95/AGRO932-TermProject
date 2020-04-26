@@ -1,0 +1,12 @@
+#!/bin/sh
+#SBATCH --ntasks-per-node=16
+#SBATCH --nodes=1
+#SBATCH --mem=125gb
+#SBATCH --time=10:00:00
+#SBATCH --job-name=HighYield
+#SBATCH --error=/work/soybean/mhapp95/AGRO932Project/Log/HighYield.error
+#SBATCH --output=/work/soybean/mhapp95/AGRO932Project/Log/HighYield.out
+
+perl table_annovar.pl /work/soybean/mhapp95/AGRO932Project/Data/VCF/HighYield.SNPs.vcf soybeandb/ -buildver GM46 -protocol refGene -out HY -operation g -vcfinput
+
+
